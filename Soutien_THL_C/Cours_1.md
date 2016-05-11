@@ -35,23 +35,25 @@ Une Règle se termine par un ```;```
 ```
 Rule ::= Bar | Foo;
 ```
-Un ```'a'``` correspond à une lecture d'un ```'a'```  
-``` language: c
+Un ```'a'``` correspond à une lecture d'un ```'a'```
+
+```
 Bar ::= 'a' 'b' 'c'; // Pour "abc"
 ```
 
 ```|``` correspond bien à un "ou"  
-``` language: c
+```
 Foo ::= 'a' 'b' | 'c' 'd'; // Pour "ab" ou "cd"
 Foo ::= 'a' [ 'b' | 'c' ] 'd'; // Pour "abd" ou "acd"
-```
+```  
+
 Utilisation de répéteurs:
 
 - ```?``` : 0-1
 - ```*``` : 0-N
 - ```+``` : 1-N
 
-``` language: c
+```
 Char ::= 'a'..'z'; // Pour char entre 'a' et 'z'
 List ::= Char [',' Char]*; // Pour liste (ex: "z,c,d,e,e,a")
 ```
@@ -63,7 +65,7 @@ Des macros peuvent être utilisés pour les répéteurs.
 
 ### Descent Recursive Parser
 Exemple d'approche top-down pour définir l'expression d'un langage:
-``` language: c
+```
 language ::= statement+;
 statement ::= expr ':';
 alpha ::= ['a'..'z'|'A'..'Z']+;
@@ -88,7 +90,7 @@ prim ::= alpha | num | '(' add ')';
 
 Autre exemple pour définir une liste en **top-down**:
 
-``` language: c
+```
 list ::= item [separator list]*;
 ```
 
