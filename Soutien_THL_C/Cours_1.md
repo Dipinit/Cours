@@ -23,24 +23,24 @@ Le PDF (normalement destiné au TEK 3) sera disponible.
 **Logique**: chaque règle de mon BNF est une méthode. Pour toute règle qui ne passe, je dois backtracker mon pointeur au point d'origine afin de tester les autres règles.
 
 **Exemple de syntaxe**:
-Nom de Règle se trouve avant un ```::=```
+Nom de Règle se trouve avant un ```::=```  
 ```
 Rule ::= ...
 ```
-Clause se trouve après un ```::=```
+Clause se trouve après un ```::=```  
 ```
 Rule ::= Bar | Foo
 ```
-Une Règle se termine par un ```;```
+Une Règle se termine par un ```;```  
 ```
 Rule ::= Bar | Foo;
 ```
-Un ```'a'``` correspond à une lecture d'un ```'a'```
+Un ```'a'``` correspond à une lecture d'un ```'a'```  
 ``` language: c
 Bar ::= 'a' 'b' 'c'; // Pour "abc"
 ```
 
-```|``` correspond bien à un "ou"
+```|``` correspond bien à un "ou"  
 ``` language: c
 Foo ::= 'a' 'b' | 'c' 'd'; // Pour "ab" ou "cd"
 Foo ::= 'a' [ 'b' | 'c' ] 'd'; // Pour "abd" ou "acd"
